@@ -13,6 +13,8 @@ public:
 	//! Updates the node and returns a NodeStates
 	Node::NodeStates update(Companion* companion);
 
+
+	// Series of functions to check conditions required for different nodes and branches
 	//! checks whether the health is above a certain value
 	bool checkHealth(float currentHealth, float healthThreshold);
 	//! checks for player input
