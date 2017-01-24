@@ -1,2 +1,7 @@
-# COMP240-Production
-COMP240 Game
+#Placeholder name group project
+
+Thomas - Navigable mountain Terrain
+
+Harriet - Procedural Enemy Generator
+
+Maddie - Companion Falcon AI
