@@ -61,6 +61,8 @@ private:
   float mouseSensitivity = 0.01f;
   //! float for how fast the player can move
   float movementMultipler = 0.05f;
+  //! maxPitch
+  const float maxPitch = glm::radians(89.0f);
   //! float for camera rotation
   float playerPitch = 0, playerYaw = 0;
   //! Mouse x and y coordinates

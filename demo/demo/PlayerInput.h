@@ -2,8 +2,7 @@
 
 //! Class for handling player input.
 /*!
-This is a class for handling initialisation errors.
-It inherits from the std::exception class.
+Class for ....
 */
 class PlayerInput
 {
@@ -15,15 +14,19 @@ public:
 
 	//! Possible character directions / valid play input
 	enum class KeyboardInput { Up, Down, Left, Right, None };
+	//! Possible mouse inputs
+	enum class MouseInput { LeftButton, RightButton, None };
 
 	//! The direction the chatacter is currently moving in
 	KeyboardInput currentDirection;
+	//! If any mouse buttons have been pressed
+	MouseInput mouseButton;
 
 	//! Check the keyboard state to see if a valid key has been pressed
 	void handleKeyBoardInput(const Uint8* keyboardState);
 
 	//! Check the mouse state to see where the mosue is and if a button has been pressed
-	void handleKeyMouseInput(const Uint8* keyboardState);
+	void handleKeyMouseInput(int mouseX, int mouseY);
 
 private:
 	//! Default up key
@@ -43,7 +46,6 @@ private:
 	SDL_Scancode ALTERNATE_LEFT = SDL_SCANCODE_LEFT;
 	//! Alternate right key
 	SDL_Scancode ALTERNATE_RIGHT = SDL_SCANCODE_RIGHT;
-
 };
 
 

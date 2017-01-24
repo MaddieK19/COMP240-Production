@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "PlayerInput.h"
 
-
 PlayerInput::PlayerInput()
 {
 }
@@ -34,4 +33,14 @@ void PlayerInput::handleKeyBoardInput(const Uint8* keyboardState)
 	{
 		currentDirection = KeyboardInput::None;
 	}
+}
+
+void PlayerInput::handleKeyMouseInput(int mouseX, int mouseY)
+{
+	if (SDL_BUTTON(SDL_BUTTON_LEFT))
+		mouseButton = MouseInput::LeftButton;
+	else if (SDL_BUTTON(SDL_BUTTON_RIGHT))
+		mouseButton = MouseInput::RightButton;
+	else 
+		mouseButton = MouseInput::None;
 }
