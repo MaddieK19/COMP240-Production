@@ -2,6 +2,4 @@
 
 Thomas - Navigable mountain Terrain
 
-Harriet - Procedural Enemy Generator
-
 Maddie - Companion Falcon AI
