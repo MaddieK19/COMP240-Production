@@ -35,11 +35,11 @@ void PlayerInput::handleKeyBoardInput(const Uint8* keyboardState)
 	}
 }
 
-void PlayerInput::handleKeyMouseInput(int mouseX, int mouseY)
+void PlayerInput::handleKeyMouseInput(Uint32 mouseState)
 {
-	if (SDL_BUTTON(SDL_BUTTON_LEFT))
+	if (mouseState  && SDL_BUTTON(SDL_BUTTON_LEFT))
 		mouseButton = MouseInput::LeftButton;
-	else if (SDL_BUTTON(SDL_BUTTON_RIGHT))
+	else if (mouseState  && SDL_BUTTON(SDL_BUTTON_RIGHT))
 		mouseButton = MouseInput::RightButton;
 	else 
 		mouseButton = MouseInput::None;

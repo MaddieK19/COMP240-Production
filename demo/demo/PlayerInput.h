@@ -26,7 +26,7 @@ public:
 	void handleKeyBoardInput(const Uint8* keyboardState);
 
 	//! Check the mouse state to see where the mosue is and if a button has been pressed
-	void handleKeyMouseInput(int mouseX, int mouseY);
+	void handleKeyMouseInput(Uint32 mouseState);
 
 private:
 	//! Default up key

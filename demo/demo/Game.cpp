@@ -173,6 +173,8 @@ void Game::run()
 			}
 		}
 		const Uint8* keyboardState = SDL_GetKeyboardState(nullptr);
+		Uint32 mouseState = SDL_GetMouseState(NULL, NULL);
+
 		if (keyboardState[SDL_SCANCODE_ESCAPE])
 			running = false;
 
@@ -180,6 +182,7 @@ void Game::run()
 			falcon.enemyNear = true;
 
 		inputHandler.handleKeyBoardInput(keyboardState);
+		mouseState = SDL_GetMouseState(NULL, NULL);
 
 		// Updates companion
 		falcon.update();
@@ -187,10 +190,8 @@ void Game::run()
 		falcon.setHealth(falcon.getHealth() - 1);  // for testing branch switching
 
 		SDL_GetRelativeMouseState(&mouseX, &mouseY);
-		if (SDL_BUTTON(SDL_BUTTON_LEFT))
-		{
+		inputHandler.handleKeyMouseInput(mouseState);
 
-		}
 		playerYaw -= mouseX * mouseSensitivity;
 		playerPitch -= mouseY * mouseSensitivity;
 
