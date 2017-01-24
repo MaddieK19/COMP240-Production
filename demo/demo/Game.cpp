@@ -179,7 +179,7 @@ void Game::run()
 	   if (keyboardState[SDL_SCANCODE_E])
 		   falcon.enemyNear = true;
 
-
+	   inputHandler.handleKeyBoardInput(keyboardState);
 
 	   // updates companion
 	   falcon.update();
@@ -202,13 +202,13 @@ void Game::run()
 	   playerLook = playerRotation * playerLook;
 
 	   glm::vec4 playerForward = playerLook;
-
-	   if (keyboardState[SDL_SCANCODE_W])
+	   
+	   if (inputHandler.currentDirection == PlayerInput::KeyboardInput::Up)
 	   {
 		   playerPosition += playerForward * movementMultipler;
 		   playerPosition.y = 0;
 	   }
-	   if (keyboardState[SDL_SCANCODE_S])
+	   if (inputHandler.currentDirection == PlayerInput::KeyboardInput::Down)
 	   {
 		   playerPosition -= playerForward * movementMultipler;
 		   playerPosition.y = 0;
@@ -219,12 +219,12 @@ void Game::run()
 	   playerRightRotation = glm::rotate(playerRightRotation, playerYaw - glm::radians(90.0f), glm::vec3(0, 1, 0));
 	   playerRight = playerRightRotation * playerRight;
 
-	   if (keyboardState[SDL_SCANCODE_A])
+	   if (inputHandler.currentDirection == PlayerInput::KeyboardInput::Left)
 	   {
 		   playerPosition -= playerRight * movementMultipler;
 		   playerPosition.y = 0;
 	   }
-	   if (keyboardState[SDL_SCANCODE_D])
+	   if (inputHandler.currentDirection == PlayerInput::KeyboardInput::Right)
 	   {
 		   playerPosition += playerRight * movementMultipler;
 		   playerPosition.y = 0;
@@ -247,6 +247,7 @@ void Game::run()
 	   glUniform3f(lightDirectionLocation, 1, 1, 1);
 	   glUniform3f(cameraSpaceLocation, playerPosition.x, playerPosition.y, playerPosition.z);
 
+	   // Render falcon
 	   glm::mat4 mvp;
 	   glm::vec3 falconPos(falcon.getX(), falcon.getY(), falcon.getZ());
 	   transform = glm::mat4();
@@ -265,8 +266,6 @@ void Game::run()
 	   mvp = projection * view * transform;
 	   glUniformMatrix4fv(mvpLocation, 1, GL_FALSE, glm::value_ptr(mvp));
 	   landMass->draw(); //draws the terrain
-
-
 
 	   SDL_GL_SwapWindow(window);
 
