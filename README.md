@@ -1,5 +1,7 @@
-#Placeholder name group project
+#BSC United
 
-Thomas - Navigable mountain Terrain
+###Thomas - Navigable Mountain Terrain
+###Maddie - Companion Falcon AI
 
-Maddie - Companion Falcon AI
+#Changelog
+###Sprint One:
