@@ -157,11 +157,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AttackBranch.h" />
     <ClInclude Include="Companion.h" />
     <ClInclude Include="BranchManager.h" />
     <ClInclude Include="CompositeNode.h" />
-    <ClInclude Include="DeadBranch.h" />
     <ClInclude Include="DecoratorNode.h" />
     <ClInclude Include="demo.h" />
     <ClInclude Include="ErrorMessage.h" />
@@ -170,13 +168,9 @@
     <ClInclude Include="perlinNoise.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="HoodedNode.h" />
-    <ClInclude Include="IdleBranch.h" />
-    <ClInclude Include="IdleRestingNode.h" />
     <ClInclude Include="LeafNode.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Node.h" />
-    <ClInclude Include="InjuredBranch.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SelectorNode.h" />
@@ -188,11 +182,9 @@
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AttackBranch.cpp" />
     <ClCompile Include="Companion.cpp" />
     <ClCompile Include="BranchManager.cpp" />
     <ClCompile Include="CompositeNode.cpp" />
-    <ClCompile Include="DeadBranch.cpp" />
     <ClCompile Include="DecoratorNode.cpp" />
     <ClCompile Include="demo.cpp" />
     <ClCompile Include="ErrorMessage.cpp" />
@@ -201,13 +193,9 @@
     <ClCompile Include="perlinNoise.cpp" />
     <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="HoodedNode.cpp" />
-    <ClCompile Include="IdleBranch.cpp" />
-    <ClCompile Include="IdleRestingNode.cpp" />
     <ClCompile Include="LeafNode.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="InjuredBranch.cpp" />
     <ClCompile Include="PlayerInput.cpp" />
     <ClCompile Include="SelectorNode.cpp" />
     <ClCompile Include="SequenceNode.cpp" />
